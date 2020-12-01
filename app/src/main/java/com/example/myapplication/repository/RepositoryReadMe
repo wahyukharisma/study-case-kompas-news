@@ -1,0 +1,4 @@
+Ini merupakan folder yang digunakan untuk menyimpan repository
+Repository digunakan untuk menjembatani antara view model dengan
+database yang akan digunakan baik database lokal ataupun data yang
+diambil dari API
