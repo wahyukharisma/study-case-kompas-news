@@ -1,6 +1,6 @@
 package com.example.myapplication.network.model
 
-data class DetailsArticle(
+data class DetailsNews(
     val author: String,
     val post_content: String,
     val post_date: String,
