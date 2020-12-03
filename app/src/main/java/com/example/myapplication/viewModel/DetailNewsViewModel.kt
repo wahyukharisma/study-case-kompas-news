@@ -3,8 +3,10 @@ package com.example.myapplication.viewModel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.viewModelScope
 import com.example.myapplication.network.model.DetailsNews
 import com.example.myapplication.repository.DetailNewsRepository
+import kotlinx.coroutines.launch
 
 class DetailNewsViewModel(application: Application) : AndroidViewModel(application) {
     private val _repository = DetailNewsRepository(application)
@@ -16,5 +18,9 @@ class DetailNewsViewModel(application: Application) : AndroidViewModel(applicati
         this.progressBar = _repository.progressBar
     }
 
-    fun getDetailNews() = _repository.getDataNews()
+    fun getDetailNews() {
+        viewModelScope.launch {
+            _repository.getDataNews()
+        }
+    }
 }
