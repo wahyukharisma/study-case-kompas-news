@@ -22,7 +22,7 @@ class DetailNewsRepository(val application: Application) {
             override fun onResponse(call: Call<DetailsNews>, response: Response<DetailsNews>) {
                 progressBar.value = false
                 Log.d("SearchRepository", "Response : ${Gson().toJson(response.body())}")
-                detailNews.value = response.body()
+                response.body()?.let { detailNews.value = response.body() }
             }
 
             override fun onFailure(call: Call<DetailsNews>, t: Throwable) {

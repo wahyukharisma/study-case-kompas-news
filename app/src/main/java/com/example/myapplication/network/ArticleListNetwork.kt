@@ -1,6 +1,6 @@
 package com.example.myapplication.network
 
-import com.example.myapplication.network.model.Article
+import com.example.myapplication.network.model.Articles
 import retrofit2.Call
 import retrofit2.http.GET
 
@@ -8,5 +8,5 @@ import retrofit2.http.GET
 
 interface ArticleListNetwork {
     @GET("articles")
-    fun getArticleList() : Call<Article>
+    fun getArticleList() : Call<Articles>
 }

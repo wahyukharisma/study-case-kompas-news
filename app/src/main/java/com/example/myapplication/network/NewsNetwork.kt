@@ -1,6 +1,6 @@
 package com.example.myapplication.network
 
-import com.example.myapplication.network.model.Article
+import com.example.myapplication.network.model.Articles
 import com.example.myapplication.network.model.DetailsNews
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -14,7 +14,7 @@ interface NewsNetwork {
     fun getDetailNews() : Call<DetailsNews>
 
     @GET("articles")
-    fun getArticleList() : Call<List<Article>>
+    fun getArticleList() : Call<Articles>
 }
 
 private val retrofit = Retrofit.Builder().baseUrl(BASE_URL)
