@@ -11,11 +11,11 @@ import kotlinx.coroutines.launch
 class DetailNewsViewModel(application: Application) : AndroidViewModel(application) {
     private val _repository = DetailNewsRepository(application)
     val detailNews : LiveData<DetailsNews>
-    val progressBar : LiveData<Boolean>
+    val shimmerBar : LiveData<Boolean>
 
     init {
         this.detailNews = _repository.detailNews
-        this.progressBar = _repository.progressBar
+        this.shimmerBar = _repository.shimmerBar
     }
 
     fun getDetailNews() {
