@@ -31,7 +31,7 @@ class DetailNews : AppCompatActivity() {
             _binding.tvTime.text = it.post_date
             _binding.tvImageDescription.text = it.post_excerpt
             _binding.tvContent.text = it.post_content
-            Picasso.get().load("https://images.unsplash.com/photo-1606756790138-261d2b21cd75?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80")
+            Picasso.get().load("https://images.unsplash.com/photo-1584582868986-db1781714c75?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
                 .into(_binding.ivHeaderImage)
         })
 
