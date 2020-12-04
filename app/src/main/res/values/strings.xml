@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">My Application</string>
+
+    <!--    dummy test : denyramandaa   -->
+    <string-array name="club_name">
+        <item>Barcelona FC</item>
+        <item>Real Madrid FC</item>
+        <item>Bayern Munchen FC</item>
+        <item>Manchester City FC</item>
+        <item>Manchester United FC</item>
+        <item>Chelsea FC</item>
+        <item>AC Milan FC</item>
+        <item>Arsenal FC</item>
+    </string-array>
+
+    <array name="club_image">
+        <item>@drawable/foto_1</item>
+        <item>@drawable/foto_1</item>
+        <item>@drawable/foto_1</item>
+        <item>@drawable/foto_1</item>
+        <item>@drawable/foto_1</item>
+        <item>@drawable/foto_1</item>
+        <item>@drawable/foto_1</item>
+        <item>@drawable/foto_1</item>
+    </array>
 </resources>
