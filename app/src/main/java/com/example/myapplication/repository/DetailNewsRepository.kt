@@ -22,8 +22,8 @@ class DetailNewsRepository(val application: Application) {
             override fun onResponse(call: Call<DetailsNews>, response: Response<DetailsNews>) {
                 shimmerBar.value = false
                 Log.d("SearchRepository", "Response : ${Gson().toJson(response.body())}")
-                if (response.body() != null) {
-                    detailNews.value = response.body()
+                response.body()?.let {
+                    detailNews.value = it
                 }
             }
 
