@@ -13,20 +13,22 @@ import retrofit2.Response
 
 class DetailNewsRepository(val application: Application) {
     var detailNews = MutableLiveData<DetailsNews>()
-    var progressBar = MutableLiveData<Boolean>()
+    var shimmerBar = MutableLiveData<Boolean>()
 
     fun getDataNews(){
-        progressBar.value = true
+        shimmerBar.value = true
 
         ApiNews.retrofitServices.getDetailNews().enqueue(object : Callback<DetailsNews>{
             override fun onResponse(call: Call<DetailsNews>, response: Response<DetailsNews>) {
-                progressBar.value = false
+                shimmerBar.value = false
                 Log.d("SearchRepository", "Response : ${Gson().toJson(response.body())}")
-                response.body()?.let { detailNews.value = response.body() }
+                response.body()?.let {
+                    detailNews.value = it
+                }
             }
 
             override fun onFailure(call: Call<DetailsNews>, t: Throwable) {
-                progressBar.value = false
+                shimmerBar.value = false
                 Toast.makeText(application,"Error while accesing the API", Toast.LENGTH_SHORT)
             }
         })

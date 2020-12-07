@@ -9,12 +9,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityDetailNewsBinding
 import com.example.myapplication.viewModel.DetailNewsViewModel
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.squareup.picasso.Picasso
 
 class DetailNews : AppCompatActivity() {
 
     private lateinit var _viewModel : DetailNewsViewModel
     private lateinit var _binding : ActivityDetailNewsBinding
+    private lateinit var _shimmerFrameLayout: ShimmerFrameLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,8 @@ class DetailNews : AppCompatActivity() {
 
         _viewModel = ViewModelProvider(this).get(DetailNewsViewModel::class.java)
         _viewModel.getDetailNews()
+
+        _shimmerFrameLayout = _binding.shimmerContent
 
         _viewModel.detailNews.observe(this, Observer {
             _binding.tvTitle.text = it.post_title
@@ -35,13 +39,15 @@ class DetailNews : AppCompatActivity() {
                 .into(_binding.ivHeaderImage)
         })
 
-        _viewModel.progressBar.observe(this, Observer {
+        _viewModel.shimmerBar.observe(this, Observer {
             if(it){
                 _binding.rlContent.visibility = View.GONE
-                _binding.pbLoading.visibility = View.VISIBLE
+                _shimmerFrameLayout.startShimmerAnimation()
+                _binding.shimmerContent.visibility = View.VISIBLE
             }else{
                 _binding.rlContent.visibility = View.VISIBLE
-                _binding.pbLoading.visibility = View.GONE
+                _shimmerFrameLayout.stopShimmerAnimation()
+                _binding.shimmerContent.visibility = View.GONE
             }
         })
     }
