@@ -10,17 +10,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.adapter.RecyclerViewAdapter
-import com.example.myapplication.network.model.Articles
+import com.example.myapplication.databinding.ActivityItemListBinding
 import com.example.myapplication.viewModel.ArticleListViewModel
 
 class ArticleList : AppCompatActivity() {
     private lateinit var viewModel : ArticleListViewModel
-    private var items: MutableList<Articles> = mutableListOf()
+    private lateinit var _binding : ActivityItemListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_item_list)
-        val list = findViewById<RecyclerView>(R.id.artilce_list_wrapper)
+        _binding = ActivityItemListBinding.inflate(layoutInflater)
+        val view = _binding.root
+        setContentView(view)
+
+        val list = _binding.artilceListWrapper
         viewModel = ViewModelProvider(this).get(ArticleListViewModel::class.java)
         viewModel.getArticleList()
 
