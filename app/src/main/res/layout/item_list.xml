@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/article_list_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/playfair_display"
+            android:gravity="start"
+            android:layout_marginRight="16dp"
+            android:text="Arsenal memasuki"
+            android:textSize="24dp"
+            android:textAlignment="textStart"
+            android:textStyle="bold"
+            android:layout_toStartOf="@id/article_list_image"
+            android:layout_toLeftOf="@id/article_list_image"/>
+        <ImageView
+            android:id="@+id/article_list_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="centerCrop"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/foto_1"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+        <TextView
+            android:id="@+id/article_list_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Politik &amp; Hukum"
+            android:textSize="14dp"
+            android:fontFamily="@font/roboto_regular" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text=" . " />
+        <TextView
+            android:id="@+id/article_list_premium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/blue_royal_700"
+            android:textSize="14dp"
+            android:text="PREMIUM"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/article_list_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15.30 WIB"
+            android:textSize="14dp"
+            android:fontFamily="@font/roboto_regular" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text=" . " />
+        <TextView
+            android:id="@+id/article_read_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="14dp"
+            android:text="1 Menit Baca" />
+
+    </LinearLayout>
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+
+</LinearLayout>
